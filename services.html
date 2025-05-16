@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wilmer - Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&family=Crimson+Text&display=swap" rel="stylesheet" />
+  <style>
+
+    /* FONT FACES */
+    @font-face {
+      font-family: Cor;
+      src: url(CormorantGaramond-VariableFont_wght.ttf);
+    }
+
+    @font-face {
+      font-family: Jose;
+      src: url(JosefinSans-VariableFont_wght.ttf);
+    }
+
+    /* BODY & BASE */
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #a8deea;
+      color: #3b2f2f;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/blu-stripes.png');
+  background-repeat: repeat;
+    }
+
+    /* SITE HEADER */
+    .site-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+      justify-content: flex-start;
+    }
+
+    .logo-img {
+      width: 150px;
+      height: auto;
+      position: relative;
+      left: -125px;
+      top: -10px;
+    }
+
+    /* NAVIGATION */
+    .nav-links {
+      margin-left: 80px;
+      display: flex;
+      gap: 20px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      padding: 20px 30px;
+      background-color: rgb(235, 235, 235);
+      border-radius: 25px;
+      box-shadow: 0 2px #a79d71;
+      position: fixed;
+      top: 20px;
+      left: 450px;
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #a79d71;
+      padding: 6px 12px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #7baecf;
+      color: white;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    /* SERVICES INTRO */
+    .services-intro {
+      max-width: 800px;
+      margin: 80px auto 20px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .services-intro h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #3b2f2f;
+      margin-bottom: 10px;
+    }
+
+    .services-intro p {
+      font-size: 16px;
+      color: #5a4a4a;
+      line-height: 1.6;
+    }
+
+    /* SERVICES CARDS CONTAINER */
+    .services-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 30px;
+      padding: 20px 40px 60px;
+      justify-content: flex-start;
+      scroll-snap-type: x mandatory;
+    }
+
+    /* INDIVIDUAL SERVICE CARD */
+    .service-card {
+      flex: 0 0 270px;
+      height: 300px;
+      scroll-snap-align: start;
+      background-color: #fffdf5;
+      border: 2px solid #a79d71;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #3b2f2f;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: #5a4a4a;
+      line-height: 1.5;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .services-container {
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .service-card {
+        flex: 0 0 240px;
+        height: auto;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-img {
+    left: 0;
+    top: 0;
+    margin-bottom: 10px;
+    width: 130px;
+  }
+
+  .nav-links {
+    position: static;
+    margin-left: 0;
+    padding: 15px 20px;
+    font-size: 13px;
+    gap: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px #a79d71;
+    max-width: 100%;
+    overflow-x: visible;
+    justify-content: center;
+  }
+
+  .content-block {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto 60px auto;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .left-content, .right-content {
+    min-width: 100%;
+  }
+
+  .left-content h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .nav-links a {
+    padding: 5px 10px;
+  }
+
+  .content-block {
+    margin: 20px auto 40px auto;
+    gap: 20px;
+  }
+
+  .left-content h2 {
+    font-size: 24px;
+  }
+
+  .left-content p, .right-content .caption {
+    font-size: 16px;
+  }
+}
+
+/* Color-coded borders for each package */
+.service-card:nth-child(1) {
+  border-color: #6fa3ef; /* Blue for Starter */
+}
+
+.service-card:nth-child(2) {
+  border-color: #f4b942; /* Gold for Professional */
+}
+
+.service-card:nth-child(3) {
+  border-color: #d24b4b; /* Red for Premium */
+}
+
+.service-card:nth-child(4) {
+  border-color: #7bc96f; /* Green for Hourly */
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="Logo.png" alt="Wilmer Logo" class="logo-img" />
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="services-intro">
+    <h1>Services</h1>
+    <p>Charges may vary depending on project complexity, hours required, and delivery timeline. I provide clear estimates after reviewing the scope of work.</p>
+  </section>
+
+  <div class="services-container">
+    <div class="service-card">
+      <h3>Starter Package</h3>
+      <p>Perfect for small personal projects or minimal branding needs. Includes a simple design, 2 revisions, and fast delivery.</p>
+    </div>
+    <div class="service-card">
+      <h3>Professional Package</h3>
+      <p>Ideal for entrepreneurs and small businesses. Includes full branding kit, 4 revisions, and mobile-friendly layout.</p>
+    </div>
+    <div class="service-card">
+      <h3>Premium Package</h3>
+      <p>Full-service package with custom illustrations, advanced UI/UX design, responsive site, and unlimited revisions.</p>
+    </div>
+    <div class="service-card">
+      <h3>Hourly Work</h3>
+      <p>Need something specific? I also work by the hour for tweaks, new components, or visual enhancements. Contact for quote.</p>
+    </div>
+  </div>
+
+</body>
+</html>

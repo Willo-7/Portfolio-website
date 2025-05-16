@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wilmer - Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&family=Crimson+Text&display=swap" rel="stylesheet" />
+  <style>
+
+    @font-face {
+      font-family: Cor;
+      src: url(CormorantGaramond-VariableFont_wght.ttf);
+    }
+
+    @font-face {
+      font-family:Jose ;
+      src: url(JosefinSans-VariableFont_wght.ttf);
+    }
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #a8deea;
+      color: #3b2f2f;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/blu-stripes.png');
+  background-repeat: repeat;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+      justify-content: flex-start;
+    }
+
+    .logo-img {
+      width: 150px;
+      height: auto;
+      position: relative;
+      left: -125px;
+      top: -10px;
+    }
+
+    .nav-links {
+      margin-left: 80px;
+      display: flex;
+      gap: 20px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      padding: 20px 30px;
+      background-color: rgb(235, 235, 235);
+      border-radius: 25px;
+      box-shadow: 0 2px #a79d71 ;
+      position: fixed;
+      top: 20px;
+      left: 450px;
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #a79d71;
+      padding: 6px 12px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #7baecf;
+      color: white;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .main-header {
+      text-align: center;
+      padding: 140px 20px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .main-header h1 {
+      font-size: 36px;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    .main-header p {
+      font-size: 17px;
+      color: #5a4a4a;
+    }
+
+    .triple-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 60px;
+      flex-wrap: wrap;
+    }
+
+    .triple-section img {
+      width: 500px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .middle-text {
+      text-align: center;
+      max-width: 300px;
+      margin: 20px;
+    }
+
+    .middle-text h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .middle-text p {
+      font-size: 16px;
+      color: #4f3e3e;
+    }
+
+    .image-block {
+      text-align: center;
+      margin: 60px 20px;
+    }
+
+    .image-block img {
+      max-width: 80%;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .image-block h3 {
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+      margin-top: 20px;
+    }
+
+    .image-block p {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 10px auto;
+      color: #4f3e3e;
+    }
+
+    @media (max-width: 900px) {
+      .triple-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .triple-section img {
+        margin-bottom: 20px;
+      }
+
+      .middle-text {
+        max-width: 90%;
+        margin: 30px 0;
+      }
+    }
+
+    @media (max-width: 1024px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-img {
+    left: 0;
+    top: 0;
+    margin-bottom: 10px;
+    width: 130px;
+  }
+
+  .nav-links {
+    position: static;
+    margin-left: 0;
+    padding: 15px 20px;
+    font-size: 13px;
+    gap: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px #a79d71;
+    max-width: 100%;
+    overflow-x: visible;
+    justify-content: center;
+  }
+
+  .content-block {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto 60px auto;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .left-content, .right-content {
+    min-width: 100%;
+  }
+
+  .left-content h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .nav-links a {
+    padding: 5px 10px;
+  }
+
+  .content-block {
+    margin: 20px auto 40px auto;
+    gap: 20px;
+  }
+
+  .left-content h2 {
+    font-size: 24px;
+  }
+
+  .left-content p, .right-content .caption {
+    font-size: 16px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="Logo.png" alt="Wilmer Logo" class="logo-img" />
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="main-header">
+    <h1>The Natural world; Animal icons</h1>
+    <p>This is simple and fun little website i made just to play around with hover and buttons. I also made illustration of small animals.</p>
+  </section>
+
+  <section class="triple-section">
+    <img src="Screenshot 2025-03-20 214705.jpeg" alt="Left Visual" />
+    <div class="middle-text">
+      <h2>Overview</h2>
+      <p>This is the home page showing the word "The Natural World" which also serves as the links to other pages. When you hover  over  "the" it will change color and animation will appear of a flower. When you click "the" it will take you to the gallery of icons. For the Natural world when you hover over "Natural World" it will turn blue and give raining annimation. Once you click it, you will be sent to the page where the icons are scattered in the forest.</p>
+    </div>
+    <img src="Screenshot 2025-03-20 215251.jpeg" alt="Right Visual" />
+  </section>
+
+  <section class="image-block">
+    <img src="Screenshot 2025-05-15 190324.png" alt="Creative Sketch" />
+    <h3>Icon map</h3>
+    <p>This is the Icon map where you will see them scattered. They are positioned to their geographic location or the behavior.</p>
+  </section>
+
+  <section class="image-block">
+    <img src="Screenshot 2025-05-15 233135.png" alt="Final Product" />
+    <h3>Gallery</h3>
+    <p>This is the Gallery page which you will see downloadable icons of small creatures. These are all drawn in illustrator. It took roughly around 3 days to get the icons. There is still more underway! This page will be filled.</p>
+  </section>
+
+</body>
+</html>

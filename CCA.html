@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wilmer - Poster Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&family=Crimson+Text&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #a8deea;
+      color: #3b2f2f;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/blu-stripes.png');
+  background-repeat: repeat;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+      justify-content: flex-start;
+    }
+
+    .logo-img {
+      width: 150px;
+      height: auto;
+      position: relative;
+      left: -125px;
+      top: -10px;
+    }
+
+    .nav-links {
+      margin-left: 80px;
+      display: flex;
+      gap: 20px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      padding: 20px 30px;
+      background-color: rgb(235, 235, 235);
+      border-radius: 25px;
+      box-shadow: 0 2px #a79d71;
+      position: fixed;
+      top: 20px;
+      left: 450px;
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #a79d71;
+      padding: 6px 12px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #7baecf;
+      color: white;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .main-header {
+      text-align: center;
+      padding: 100px 20px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .main-header h1 {
+      font-size: 36px;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    .main-header p {
+      font-size: 17px;
+      color: #1a1a1a;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+
+    /* Simple image slider */
+    .slider-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+
+    .slider-container img {
+      width: 100%;
+      max-width: 300px;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .poster-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .poster-card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .poster-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .poster-card p {
+      padding: 15px;
+      font-size: 16px;
+      color: #4f3e3e;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .poster-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .slider-container {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 1024px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-img {
+    left: 0;
+    top: 0;
+    margin-bottom: 10px;
+    width: 130px;
+  }
+
+  .nav-links {
+    position: static;
+    margin-left: 0;
+    padding: 15px 20px;
+    font-size: 13px;
+    gap: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px #a79d71;
+    max-width: 100%;
+    overflow-x: visible;
+    justify-content: center;
+  }
+
+  .content-block {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto 60px auto;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .left-content, .right-content {
+    min-width: 100%;
+  }
+
+  .left-content h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .nav-links a {
+    padding: 5px 10px;
+  }
+
+  .content-block {
+    margin: 20px auto 40px auto;
+    gap: 20px;
+  }
+
+  .left-content h2 {
+    font-size: 24px;
+  }
+
+  .left-content p, .right-content .caption {
+    font-size: 16px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="Logo.png" alt="Wilmer Logo" class="logo-img" />
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="main-header">
+    <h1>Poster Showcase</h1>
+    <p>I was able to be work as a graphic design intern in one of the buildings in the campus. It was for the Arron Davis hall which is where they host all sorts of events such as musicals, theaters, dance, and films. This is where the magic happens!</p>
+  </section>
+
+  <section class="slider-container">
+    <img src="67dce881e53c0927cb9376d9_Slocka 3 (1).png" alt="Slider Image 1">
+    <img src="67dce6f7fb3a4dad25fb92b5_Ballet (1).jpg" alt="Slider Image 2">
+    <img src="truth tells slider (2).png" alt="Slider Image 3">
+  </section>
+
+  <section class="poster-row">
+    <div class="poster-card">
+      <img src="67dcea9dca57254ad0be91c2_slocka 4 (1).png" alt="Poster 1">
+      <p>The first slider and poster is for, Sloka, a dancer who was performing in Arron Davis Hall. The dance is Guru Vandana which is an Indian dance made of gestures and movement to express gratitude and love for a mentor or a teacher. I went with the red colored flower to demonstrate love and purity. In india it is also an important colored flower mainly used in special events or festival</p>
+    </div>
+    <div class="poster-card">
+      <img src="67dcecf75cbff90d06cd86f4_FIRST FLYER.jpg" alt="Poster 2">
+      <p> A poster for an event held in ccny by book author Nina Crews</p>
+    </div>
+    <div class="poster-card">
+      <img src="67dcec39d5ab3c72e5022000_James 3 (1).jpg" alt="Poster 3">
+      <p>Ccny celebrating and showing films of James Baldwins</p>
+    </div>
+  </section>
+
+</body>
+</html>

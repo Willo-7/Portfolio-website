@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wilmer - Digital Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&family=Crimson+Text&display=swap" rel="stylesheet" />
+  <style>
+
+    @font-face {
+      font-family: Cor;
+      src: url(CormorantGaramond-VariableFont_wght.ttf);
+    }
+
+    @font-face {
+      font-family:Jose ;
+      src: url(JosefinSans-VariableFont_wght.ttf);
+    }
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #a8deea;
+      color: #1d1d1d;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/blu-stripes.png');
+  background-repeat: repeat;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+      justify-content: flex-start;
+    }
+
+    .logo-img {
+      width: 150px;
+      height: auto;
+      position: relative;
+      left: -125px;
+      top: -10px;
+    }
+
+    .nav-links {
+      margin-left: 80px;
+      display: flex;
+      gap: 20px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      padding: 20px 30px;
+      background-color: rgb(235, 235, 235);
+      border-radius: 25px;
+      box-shadow: 0 2px #a79d71;
+      position: fixed;
+      top: 20px;
+      left: 450px;
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #a79d71;
+      padding: 6px 12px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #7baecf;
+      color: white;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .poster-showcase {
+      padding: 100px 40px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin-bottom: 60px;
+      color: #3b2f2f;
+    }
+
+    .poster-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .poster-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .poster-item img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .poster-description {
+      margin-top: 24px;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .poster-description h3 {
+      font-size: 28px;
+      margin: 0 0 12px;
+      color: #3b2f2f;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .poster-description p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #1d1d1d;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: static;
+        margin: 20px auto;
+      }
+      .poster-grid {
+        padding: 0 10px;
+      }
+      .poster-description {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 1024px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-img {
+    left: 0;
+    top: 0;
+    margin-bottom: 10px;
+    width: 130px;
+  }
+
+  .nav-links {
+    position: static;
+    margin-left: 0;
+    padding: 15px 20px;
+    font-size: 13px;
+    gap: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px #a79d71;
+    max-width: 100%;
+    overflow-x: visible;
+    justify-content: center;
+  }
+
+  .content-block {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto 60px auto;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .left-content, .right-content {
+    min-width: 100%;
+  }
+
+  .left-content h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .nav-links a {
+    padding: 5px 10px;
+  }
+
+  .content-block {
+    margin: 20px auto 40px auto;
+    gap: 20px;
+  }
+
+  .left-content h2 {
+    font-size: 24px;
+  }
+
+  .left-content p, .right-content .caption {
+    font-size: 16px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <img src="Logo.png" alt="Wilmer Logo" class="logo-img" />
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact me.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="poster-showcase">
+    <h2 class="section-title">Poster Showcase</h2>
+    <div class="poster-grid">
+      <div class="poster-item">
+        <img src="F1 Poster (4).jpeg" alt="Poster 1" />
+        <div class="poster-description">
+          <h3>Max Verstappen</h3>
+          <p>This poster is of four-time world champion max Verstappen, made in 2023 when I was learning Photoshop and procreate. This poster was a struggle and took approximatly two weeks to make as I wasn't too familiar with the applications. Procreate had an easier learning curve as it is similar to traditional art to some extent but offers a much more customizable amount of colors and brushes to use within a singular application. I used the default brushes already provided in the app. I used two or three different brushes which are Spectra, Tamar, and Syrup.
+
+The process
+
+I started off with a sketch drawing out max in a side view. Then i started sketching the f1 car based on his recoveries in the track by drifting. Then i sketched out the track in a different layer.
+
+I knew i wanted this poster to pop so i used a vibrant colors throught the poster specially since
+those are the actual colors for both the track and the red bull team. I added some other small details like the helmet of max.
+
+Lastly, I used photoshop for all the typography. For the f1 logo tho i used the offical logo for f1 and placed it at the cornerl
+</p>
+        </div>
+      </div>
+      <div class="poster-item">
+        <img src="Liam lawson hype poster (1).png" alt="Poster 2" />
+        <div class="poster-description">
+          <h3>Liam Lawson</h3>
+          <p>This poster is of Liam Lawson, currently a red bull driver after replacing Sergio Perez. This is a poster to hype up the new driver. It took me appoximaly 1 week to do this poster.
+
+The process
+
+This poster was made using illustrator. Unlike the Max Verstappen one, this one didnt have a sketch i could already use so i had to make one in the application. With this poster i wanted to capture Liam as the new driver so i had him at the center with a full side profile of the red bull car. Similar to the other poster is has vibrant colors with the RB Labels and sponsors.
+
+I also added a plane in the back which was originally suppose to have liam lawsons name in a banner. However i decided o go wih this approch to simplify it</p>
+        </div>
+      </div>
+      <div class="poster-item">
+        <img src="Max hype poster (1).png" alt="Poster 3" />
+        <div class="poster-description">
+          <h3>Classic Reimagined</h3>
+          <p>This poster is of four-time world champion max Verstappen, made in 2025.
+The poster was made in illustrator, it is similar to the original but is simplified a bit with sun ray background.
+
+The process
+
+This was an attempt to make use of illustrator more. The process is similar to illustrator but the tools were different in many ways,
+
+I used the sketches i had on the original and used it to make this one similar to it.
+the colors are more darker than the original and there isnt as many details. The background is also changed, there is a sun ray type of pattern. I also changed the one and the positioning of many of the labels.</p>
+        </div>
+      </div>
+  </section>
+
+</body>
+</html>
+
+
+
+

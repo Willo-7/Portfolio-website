@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wilmer - Digital Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&family=Crimson+Text&display=swap" rel="stylesheet" />
+  <style>
+    /* KEYFRAME ANIMATIONS */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(167, 157, 113, 0);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 8px rgba(167, 157, 113, 0.6);
+      }
+    }
+
+    @keyframes cardLift {
+      0% {
+        transform: translateY(0);
+        box-shadow: none;
+      }
+      100% {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    @keyframes progressFill {
+      from {
+        width: 0;
+      }
+      to {
+        width: var(--target-width);
+      }
+    }
+
+    @font-face {
+      font-family: Cor;
+      src: url(CormorantGaramond-VariableFont_wght.ttf);
+    }
+
+    @font-face {
+      font-family:Jose ;
+      src: url(JosefinSans-VariableFont_wght.ttf);
+    }
+    /* BASE STYLES */
+    body {
+      margin: 0;
+      font-family: 'Cor';
+      background-color: #a8deea;
+      color: #3b2f2f;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/blu-stripes.png');
+  background-repeat: repeat;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+      justify-content: flex-start;  /* Keep all items left-aligned */
+    }
+
+    .logo-img {
+      width: 150px;
+      height: auto;
+      position: relative;
+      left: -125px;
+      top: -10px;
+    }
+
+    .nav-links {
+      margin-left: 80px;
+      display: flex;
+      gap: 20px;
+      font-family: 'Jose';
+      font-size: 14px;
+      padding: 20px 30px;
+      background-color: rgb(235, 235, 235);
+      border-radius: 25px;
+      box-shadow: 0 2px #a79d71 ;
+      position: fixed;
+      top: 20px;
+      left: 450px; /* Adjust based on your layout */
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #a79d71;
+      padding: 6px 12px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #7baecf;
+      color: white;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 140px 20px 60px;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      top: -100px;
+    }
+
+    .hero h1,
+    .hero p.subheading {
+      opacity: 0;
+      animation: fadeSlideUp 1.2s ease forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      margin-bottom: 10px;
+      animation-delay: 0.3s;
+    }
+
+    .hero p {
+      font-size: 100px;
+      margin: 0 0 20px;
+      color: #8a9c8c;
+      -webkit-text-stroke:.5 #fffdf5;
+      /* keep this big greeting visible */
+    }
+
+    .hero .subheading {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 auto 30px;
+      max-width: 700px;
+      animation-delay: 0.5s;
+      color: black;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: 2px solid #a79d71;
+      border-radius: 8px;
+      background: transparent;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #a79d71;
+      color: black;
+      animation: pulse 1s infinite;
+    }
+
+    /* SKILLS AND APPS */
+    .skills-app-section {
+      display: flex;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 100px auto 60px;
+      gap: 40px;
+      padding: 0 20px;
+      flex-wrap: wrap;
+      background-color: rgb(235, 235, 235);
+    }
+
+    .skills,
+    .applications-used {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .skills h2,
+    .applications-used h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .skill {
+      margin-bottom: 22px;
+    }
+
+    .skill label {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .progress-bar {
+      background-color: rgb(235, 235, 235);
+      border-radius: 20px;
+      height: 18px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, #a8deea, #7baecf);
+      height: 100%;
+      border-radius: 20px 0 0 20px;
+      width: 0;
+      animation: progressFill 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    /* Inline style sets --target-width */
+    .progress-fill[data-width] {
+      --target-width: attr(data-width percentage);
+    }
+
+    .applications-used ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .applications-used li {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .app-icon {
+      font-size: 22px;
+    }
+
+    section {
+      border-bottom: 1.5px solid rgba(59, 47, 47, 0.2);
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* PORTFOLIO */
+    .portfolio-section {
+      padding: 80px 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .portfolio-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .portfolio-card {
+      background: rgb(235, 235, 235);
+      border: 1px solid #d7c4a3;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 400px;
+      transition: transform 0.3s ease;
+      will-change: transform, box-shadow;
+    }
+
+    .portfolio-card:hover {
+      animation: cardLift 0.3s forwards;
+      cursor: pointer;
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+    }
+
+    .card-text {
+      padding: 16px;
+      font-size: 18px;
+      font-family: 'Cormorant Garamond', serif;
+      color: #3b2f2f;
+      background-color: rgb(235, 235, 235);
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .site-header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        position: static;
+        margin-left: 0;
+      }
+
+      .skills-app-section {
+        flex-direction: column;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1024px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-img {
+    left: 0;
+    top: 0;
+    margin-bottom: 10px;
+    width: 130px;
+  }
+
+  .nav-links {
+    position: static;
+    margin-left: 0;
+    padding: 15px 20px;
+    font-size: 13px;
+    gap: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px #a79d71;
+    max-width: 100%;
+    overflow-x: visible;
+    justify-content: center;
+  }
+
+  .content-block {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto 60px auto;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .left-content, .right-content {
+    min-width: 100%;
+  }
+
+  .left-content h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .nav-links a {
+    padding: 5px 10px;
+  }
+
+  .content-block {
+    margin: 20px auto 40px auto;
+    gap: 20px;
+  }
+
+  .left-content h2 {
+    font-size: 24px;
+  }
+
+  .left-content p, .right-content .caption {
+    font-size: 16px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="Logo.png" alt="Wilmer Logo" class="logo-img" />
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact me.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm Wilmer</h1>
+    <p>a Digital Designer</p>
+    <p class="subheading">
+      Crafting timeless designs—posters, websites, sliders, and custom illustrations. I blend aesthetics with meaning to ensure each visual tells a compelling story. Let’s collaborate to bring your next vision to life!
+    </p>
+    <button>View My Work</button>
+  </section>
+
+  <section class="skills-app-section">
+    <div class="skills">
+      <h2>Skills</h2>
+      <div class="skill">
+        <label>Graphic Design</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="--target-width: 90%; width: 90%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <label>Web design</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="--target-width: 85%; width: 85%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <label>Branding</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="--target-width: 80%; width: 80%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <label>UI/UX Design</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="--target-width: 75%; width: 75%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="applications-used">
+      <h2>Applications Used</h2>
+      <ul>
+        <li><span class="app-icon">🎨</span> Adobe Photoshop</li>
+        <li><span class="app-icon">🖌️</span> Adobe Illustrator</li>
+        <li><span class="app-icon">📄</span> Adobe InDesign</li>
+        <li><span class="app-icon">💻</span> Visual Studio Code</li>
+        <li><span class="app-icon">💻</span> Figma</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="portfolio-section" id="portfolio">
+    <h2 class="portfolio-title">Preview</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card" style="grid-column: span 1;">
+        <img src="F1 Poster (4).jpeg" alt="Poster Design" />
+        <div class="card-text">Poster Design</div>
+      </div>
+      <div class="portfolio-card" style="grid-column: span 1;">
+        <img src="Screenshot 2025-05-15 190324.png" alt="Landing Page" />
+        <div class="card-text"> Animal Icons</div>
+      </div>
+      <div class="portfolio-card" style="grid-column: span 2;">
+        <img src="Screenshot 2025-05-15 190432.png" alt="Illustration" />
+        <div class="card-text"> Italian Restaurant</div>
+      </div>
+      <div class="portfolio-card" style="grid-column: span 1;">
+        <img src="Screenshot 2025-05-15 192706.png" alt="UI Mockup" />
+        <div class="card-text"> CCCA posters & sliders</div>
+      </div>
+      <div class="portfolio-card" style="grid-column: span 1;">
+        <img src="Screenshot 2025-05-15 192156.png" alt="Typography Design" />
+        <div class="card-text">Work-life balance App</div>
+       

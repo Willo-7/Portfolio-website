@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wilmer - Video Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display:wght@700&family=Crimson+Text&display=swap" rel="stylesheet" />
+  <style>
+
+    @font-face {
+      font-family: Cor;
+      src: url(CormorantGaramond-VariableFont_wght.ttf);
+    }
+
+    @font-face {
+      font-family: Jose;
+      src: url(JosefinSans-VariableFont_wght.ttf);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #a8deea;
+      color: #3b2f2f;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/blu-stripes.png');
+  background-repeat: repeat;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+      justify-content: flex-start;
+    }
+
+    .logo-img {
+      width: 150px;
+      height: auto;
+      position: relative;
+      left: -125px;
+      top: -10px;
+    }
+
+    .nav-links {
+      margin-left: 80px;
+      display: flex;
+      gap: 20px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      padding: 20px 30px;
+      background-color: rgb(235, 235, 235);
+      border-radius: 25px;
+      box-shadow: 0 2px #a79d71;
+      position: fixed;
+      top: 20px;
+      left: 450px;
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #a79d71;
+      padding: 6px 12px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #7baecf;
+      color: white;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .main-header {
+      text-align: center;
+      padding: 100px 20px 10px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .main-header h1 {
+      font-size: 36px;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    .main-header p {
+      font-size: 17px;
+      color: #5a4a4a;
+      margin-top: 0;
+    }
+
+    .video-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px 40px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 40%;
+      height: 0;
+      width: 90%;
+      max-width: 900px;
+      margin-bottom: 15px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .video-description {
+      max-width: 700px;
+      text-align: center;
+      margin-top: 20px;
+      padding: 0 10px;
+    }
+
+    .video-description p {
+      font-size: 17px;
+      color: #4f3e3e;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      padding: 12px 26px;
+      background-color: #a79d71;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      font-family: 'Josefin Sans', sans-serif;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .cta-button:hover {
+      background-color: #3b2f2f;
+      transform: scale(1.05);
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .logo-img {
+        position: static;
+        width: 130px;
+        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        position: static;
+        margin: 10px auto;
+        padding: 12px 18px;
+        font-size: 13px;
+        gap: 12px;
+        border-radius: 20px;
+        box-shadow: 0 2px #a79d71;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .main-header {
+        padding: 80px 20px 20px;
+      }
+
+      .main-header h1 {
+        font-size: 32px;
+      }
+
+      .main-header p {
+        font-size: 16px;
+      }
+
+      .video-section {
+        padding: 20px;
+      }
+
+      .video-wrapper {
+        width: 100%;
+      }
+
+      .video-description {
+        margin-top: 20px;
+      }
+
+      .cta-button {
+        margin-top: 20px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .logo-img {
+        width: 100px;
+        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 12px;
+        padding: 10px 15px;
+      }
+
+      .nav-links a {
+        padding: 5px 10px;
+      }
+
+      .main-header h1 {
+        font-size: 28px;
+      }
+
+      .main-header p {
+        font-size: 15px;
+      }
+
+      .video-description p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="Logo.png" alt="Wilmer Logo" class="logo-img" />
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="main-header">
+    <h1>Notte Dorata - Showcase</h1>
+    <p>This website is of an Italian restaurant "Notte Dorata" demonstrating the beauty of night dining and showing the most compelling cuisine.</p>
+  </section>
+
+  <section class="video-section">
+    <div class="video-wrapper">
+      <iframe src="Recording 2025-05-16 013027.mp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-description">
+      <p>This video highlights a real-time concept-to-completion journey. It's all about combining mood, message, and movement for a compelling user experience.</p>
+    </div>
+    <a href="https://willo-7.github.io/Restaurant/" class="cta-button" target="_blank">Visit Project Website</a>
+  </section>
+
+</body>
+</html>
