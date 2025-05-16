@@ -3,256 +3,383 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wilmer - Content Page</title>
+  <title>Wilmer - Portfolio</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans&family=Playfair+Display&display=swap');
+
     body {
-  margin: 0;
-  font-family: 'Cormorant Garamond', serif;
-  background-color: #a8deea;
-  color: #3b2f2f;
-  overflow-x: hidden;
-  background-image: url('https://www.transparenttextures.com/patterns/blu-stripes.png');
-  background-repeat: repeat;
-}
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #a8deea;
+      color: #3b2f2f;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/blu-stripes.png');
+      background-repeat: repeat;
+    }
 
-.site-header {
-  display: flex;
-  align-items: center;
-  padding: 20px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: flex-start;
-  /* allow wrap on smaller screens */
-  flex-wrap: nowrap;
-  position: relative;
-  z-index: 10;
-}
+    /* Animations */
+    @keyframes navSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.logo-img {
-  width: 150px;
-  height: auto;
-  position: relative;
-  left: -125px;
-  top: -10px;
-  transition: all 0.3s ease;
-}
+    @keyframes btnPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(167, 157, 113, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 12px 6px rgba(167, 157, 113, 0.4);
+      }
+    }
 
-.nav-links {
-  margin-left: 80px;
-  display: flex;
-  gap: 20px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 14px;
-  padding: 20px 30px;
-  background-color: rgb(235, 235, 235);
-  border-radius: 25px;
-  box-shadow: 0 2px #a79d71;
-  position: fixed;
-  top: 20px;
-  left: 450px;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  overflow-x: auto;
-  max-width: calc(100vw - 50px);
-}
+    @keyframes imageFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
 
-.nav-links::-webkit-scrollbar {
-  height: 6px;
-}
+    .site-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      position: relative;
+      z-index: 10;
+    }
 
-.nav-links::-webkit-scrollbar-thumb {
-  background: #a79d71;
-  border-radius: 3px;
-}
+    .logo-img {
+      width: 150px;
+      height: auto;
+      position: relative;
+      left: -125px;
+      top: -10px;
+      transition: all 0.3s ease;
+      animation: imageFloat 6s ease-in-out infinite;
+    }
 
-.nav-links a {
-  text-decoration: none;
-  color: #a79d71;
-  padding: 6px 12px;
-  font-weight: 600;
-  border-radius: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  white-space: nowrap;
-}
+    .nav-links {
+      margin-left: 80px;
+      display: flex;
+      gap: 20px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      padding: 20px 30px;
+      background-color: rgb(235, 235, 235);
+      border-radius: 25px;
+      box-shadow: 0 2px #a79d71;
+      position: fixed;
+      top: 20px;
+      left: 450px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      overflow-x: auto;
+      max-width: calc(100vw - 50px);
+      animation: navSlideDown 0.7s ease forwards;
+      opacity: 0;
+    }
 
-.nav-links a:hover {
-  background-color: #7baecf;
-  color: white;
-  transform: scale(1.1);
-  cursor: pointer;
-}
+    .nav-links.visible {
+      opacity: 1;
+    }
 
-.portfolio-heading {
-  text-align: center;
-  font-size: 48px;
-  margin-top: 10px;
-  font-family: 'Playfair Display', serif;
-  color: #3b2f2f;
-}
+    .nav-links::-webkit-scrollbar {
+      height: 6px;
+    }
 
-.content-block {
-  display: flex;
-  max-width: 1000px;
-  margin: 60px auto 80px auto;
-  gap: 40px;
-  padding: 0 20px;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-}
+    .nav-links::-webkit-scrollbar-thumb {
+      background: #a79d71;
+      border-radius: 3px;
+    }
 
-.left-content {
-  flex: 1;
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: #a79d71;
+      padding: 6px 12px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      white-space: nowrap;
+      position: relative;
+    }
 
-.left-content h2 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 36px;
-  margin: 0;
-  color: #a79d71;
-}
+    .nav-links a:hover {
+      background-color: #7baecf;
+      color: white;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
 
-.left-content p {
-  font-size: 18px;
-  line-height: 1.5;
-  margin: 0;
-  color: #1d1d1d;
-}
+    .portfolio-heading {
+      text-align: center;
+      font-size: 48px;
+      margin-top: 10px;
+      font-family: 'Playfair Display', serif;
+      color: #3b2f2f;
+    }
 
-.left-content button {
-  width: max-content;
-  padding: 12px 24px;
-  border: 2px solid #a79d71;
-  border-radius: 8px;
-  background: transparent;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  color: #3b2f2f;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+    .content-block {
+      display: flex;
+      max-width: 1000px;
+      margin: 60px auto 80px auto;
+      gap: 40px;
+      padding: 0 20px;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
 
-.left-content button:hover {
-  background-color: #a79d71;
-  color: black;
-}
+    /* Animate content blocks in sequence */
+    .content-block:nth-child(3) { animation-delay: 0.2s; }
+    .content-block:nth-child(4) { animation-delay: 0.4s; }
+    .content-block:nth-child(5) { animation-delay: 0.6s; }
+    .content-block:nth-child(6) { animation-delay: 0.8s; }
+    .content-block:nth-child(7) { animation-delay: 1s; }
+    .content-block:nth-child(8) { animation-delay: 1.2s; }
 
-.right-content {
-  flex: 1;
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.right-content img {
-  max-width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  display: block;
-}
+    .left-content {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-.right-content .caption {
-  font-size: 16px;
-  font-family: 'Cormorant Garamond', serif;
-  color: #5a524b;
-  text-align: center;
-  max-width: 320px;
-}
+    .left-content h2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 36px;
+      margin: 0;
+      color: #a79d71;
+    }
 
-.right-content .date {
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  color: #8a8a8a;
-}
+    .left-content p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0;
+      color: #1d1d1d;
+    }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .site-header {
-    flex-wrap: wrap;
-    justify-content: center;
+    .left-content button {
+      width: max-content;
+      padding: 12px 24px;
+      border: 2px solid #a79d71;
+      border-radius: 8px;
+      background: transparent;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: #3b2f2f;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      animation: btnPulse 3s infinite;
+      box-shadow: 0 0 0 0 rgba(167, 157, 113, 0.7);
+    }
+
+    .left-content button:hover {
+      background-color: #a79d71;
+      color: black;
+      box-shadow: 0 0 12px 6px rgba(167, 157, 113, 0.6);
+      animation-play-state: paused;
+    }
+
+    .right-content {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      animation: imageFloat 6s ease-in-out infinite;
+    }
+
+    .right-content img {
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .right-content img:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+
+    .right-content .caption {
+      font-size: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      color: #5a524b;
+      text-align: center;
+      max-width: 320px;
+    }
+
+    .right-content .date {
+      font-size: 14px;
+      font-family: 'Arial', sans-serif;
+      color: #8a8a8a;
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .logo-img {
+        left: 0;
+        top: 0;
+        margin-bottom: 10px;
+        width: 130px;
+      }
+
+      .nav-links {
+        position: static;
+        margin-left: 0;
+        padding: 15px 20px;
+        font-size: 13px;
+        gap: 15px;
+        border-radius: 20px;
+        box-shadow: 0 2px #a79d71;
+        max-width: 100%;
+        overflow-x: visible;
+        justify-content: center;
+        animation: none;
+        opacity: 1 !important;
+      }
+
+      .content-block {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        margin: 40px auto 60px auto;
+        gap: 30px;
+        padding: 0 20px;
+      }
+
+      .left-content, .right-content {
+        min-width: 100%;
+      }
+
+      .left-content h2 {
+        font-size: 28px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .logo-img {
+        width: 100px;
+        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 12px;
+        padding: 10px 15px;
+      }
+
+      .nav-links a {
+        padding: 5px 10px;
+      }
+
+      .content-block {
+        margin: 20px auto 40px auto;
+        gap: 20px;
+      }
+
+      .left-content h2 {
+        font-size: 24px;
+      }
+
+      .left-content p, .right-content .caption {
+        font-size: 16px;
+      }
+    }
+
+    @keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
   }
-
-  .logo-img {
-    left: 0;
-    top: 0;
-    margin-bottom: 10px;
-    width: 130px;
-  }
-
-  .nav-links {
-    position: static;
-    margin-left: 0;
-    padding: 15px 20px;
-    font-size: 13px;
-    gap: 15px;
-    border-radius: 20px;
-    box-shadow: 0 2px #a79d71;
-    max-width: 100%;
-    overflow-x: visible;
-    justify-content: center;
-  }
-
-  .content-block {
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px auto 60px auto;
-    gap: 30px;
-    padding: 0 20px;
-  }
-
-  .left-content, .right-content {
-    min-width: 100%;
-  }
-
-  .left-content h2 {
-    font-size: 28px;
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .logo-img {
-    width: 100px;
-    margin-bottom: 10px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 12px;
-    font-size: 12px;
-    padding: 10px 15px;
-  }
-
-  .nav-links a {
-    padding: 5px 10px;
-  }
-
-  .content-block {
-    margin: 20px auto 40px auto;
-    gap: 20px;
-  }
-
-  .left-content h2 {
-    font-size: 24px;
-  }
-
-  .left-content p, .right-content .caption {
-    font-size: 16px;
-  }
+/* Animate right-content to slide in with delay matching the content-block fadeInUp */
+.content-block .right-content {
+  opacity: 0;
+  animation: slideInRight 1s forwards;
+  animation-delay: 0.3s; /* small delay so left fades in just before right slides in */
 }
+
+/* Adjust delays for subsequent blocks if needed */
+.content-block:nth-child(3) .right-content { animation-delay: 0.5s; }
+.content-block:nth-child(4) .right-content { animation-delay: 0.7s; }
+.content-block:nth-child(5) .right-content { animation-delay: 0.9s; }
+.content-block:nth-child(6) .right-content { animation-delay: 1.1s; }
+.content-block:nth-child(7) .right-content { animation-delay: 1.3s; }
+.content-block:nth-child(8) .right-content { animation-delay: 1.5s; }
+
+
+/* Initial hidden states */
+.content-block .left-content,
+.content-block .right-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Slide right initial state for right-content */
+.content-block .right-content {
+  transform: translateX(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Animate in for left content */
+.content-block.animate .left-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+/* Animate in for right content */
+.content-block.animate .right-content {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+
+
 
   </style>
 </head>
 <body>
   <header class="site-header">
     <img src="Logo.png" alt="Wilmer Logo" class="logo-img" />
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="#portfolio">Portfolio</a>
       <a href="services.html">Services</a>
@@ -261,87 +388,110 @@
     </nav>
   </header>
 
-<h1 class="portfolio-heading">Portfolio</h1>
+  <h1 class="portfolio-heading" id="portfolio">Portfolio</h1>
 
-
-  <!-- Six repeated content blocks -->
   <div class="content-block">
     <div class="left-content">
       <h2>F1 Posters</h2>
-      <p>This is a series of posters consisting of red bull driver Max Verstappen and Liam Lawson made from my love for the formula one mostorsport. These Posters are still in progress and might be redesigned, taken out, or some more posters might be added to expand the series</p>
-      <a href="F1 Posters.html"><button>View More</button></a>>
+      <p>This is a series of posters featuring Red Bull drivers Max Verstappen and Liam Lawson, created from my love for Formula One motorsport. These posters are still in progress and might be redesigned, removed, or expanded with additional works.</p>
+      <a href="F1 Posters.html"><button>View More</button></a>
     </div>
     <div class="right-content">
-      <img src="F1 Poster (4).jpeg" alt="Creative Work Sample" />
-      <div class="caption"> three hype posters about red bulls drivers</div>
-      <div class="date"></div>
+      <img src="F1 Poster (4).jpeg" alt="Three hype posters of Red Bull drivers" />
+      <div class="caption">Three hype posters about Red Bull's drivers</div>
+      <div class="date">2025</div>
     </div>
   </div>
 
   <div class="content-block">
     <div class="left-content">
-      <h2> Animal Icons</h2>
-      <p>This is simple and fun little website i made just to play around with hover and buttons. This website contains a map of a forest with animal icons all around and a gallery where you can download these illustrations for your own use.</p>
-      <a href="Animal Icons.html"><button>View More</button></a>>
+      <h2>Animal Icons</h2>
+      <p>This is a simple and fun website I created to experiment with hover effects and buttons. It features a map of a forest with animal icons scattered throughout, and a gallery where users can download these illustrations for personal use.</p>
+      <a href="Animal Icons.html"><button>View More</button></a>
     </div>
     <div class="right-content">
-      <img src="Screenshot 2025-05-15 190324.png" alt="Vintage Design" />
+      <img src="Screenshot 2025-05-15 190324.png" alt="Forest map with animal icons" />
       <div class="caption">Go explore the natural world</div>
-      <div class="date"></div>
+      <div class="date">2025</div>
     </div>
   </div>
 
   <div class="content-block">
     <div class="left-content">
       <h2>Notte Dorata</h2>
-      <p>This website is of an italian restaurant "Notte Dorata" demonstrating the beauty of night dining and showing the most compelling cuisine.    </p>
-      <a href="Italian Restaurant.html"><button>View More</button></a>>
+      <p>This website was created for an Italian restaurant, “Notte Dorata,” to showcase the beauty of night dining and highlight its exquisite cuisine.</p>
+      <a href="Italian Restaurant.html"><button>View More</button></a>
     </div>
     <div class="right-content">
-      <img src="Screenshot 2025-05-15 190432.png" alt="Illustrated Work" />
-      <div class="caption"> Dine in in Notte Dorata</div>
-      <div class="date"></div>
+      <img src="Screenshot 2025-05-15 190432.png" alt="Italian restaurant showcase" />
+      <div class="caption">Dine in at Notte Dorata</div>
+      <div class="date">2025</div>
     </div>
   </div>
 
   <div class="content-block">
     <div class="left-content">
       <h2>CCCA</h2>
-      <p> Posters and Sliders made for the city colege center for the arts</p>
-    <a href="CCA.html"><button>View More</button></a>>
+      <p>These are posters and sliders designed for the City College Center for the Arts, created to promote events and programs in a dynamic visual style.</p>
+      <a href="CCA.html"><button>View More</button></a>
     </div>
     <div class="right-content">
-      <img src="Screenshot 2025-05-15 192706.png" alt="Typography Sample" />
-      <div class="caption">Slider</div>
-      <div class="date"></div>
+      <img src="Screenshot 2025-05-15 192706.png" alt="Slider design for CCCA" />
+      <div class="caption">Event slider design for CCCA</div>
+      <div class="date">2025</div>
     </div>
   </div>
 
   <div class="content-block">
     <div class="left-content">
       <h2>App</h2>
-      <p>Inspired by design eras past, I bring back charm with a modern usability-first twist.</p>
-     <a href="App.html"><button>View More</button></a>>
+      <p>Inspired by past design eras, this app merges vintage aesthetics with modern, usability-first UI principles. A seamless blend of charm and function.</p>
+      <a href="App.html"><button>View More</button></a>
     </div>
     <div class="right-content">
-      <img src=" Screenshot 2025-05-15 192156.png    " alt="Retro Modern Design" />
+      <img src="Screenshot 2025-05-15 192156.png" alt="App design with retro-modern theme" />
       <div class="caption">Merging deco lines with pixel precision for timeless appeal.</div>
-      <div class="date"></div>
+      <div class="date">2025</div>
     </div>
   </div>
 
   <div class="content-block">
     <div class="left-content">
       <h2>Gelatin Redesign</h2>
-      <p>magine waking up daily feeling balanced, energized, and in control of your life. That's the goal of the Daysync app. 
-</p>
-    <a href="Gelatin Redesign.html"><button>View More</button></a>>
+      <p>Imagine waking up each day feeling balanced, energized, and in control of your life. That’s the goal of the redesigned Daysync app — a wellness-focused digital companion.</p>
+      <a href="Gelatin Redesign.html"><button>View More</button></a>
     </div>
     <div class="right-content">
-      <img src="Screenshot 2025-05-15 200809.png" alt="Design Details" />
+      <img src="Screenshot 2025-05-15 200809.png" alt="Gelatin app redesign screenshot" />
       <div class="caption">A showcase of subtle yet striking design enhancements.</div>
-      <div class="date"></div>
+      <div class="date">2025</div>
     </div>
   </div>
+
+  <script>
+    // Trigger nav fade-in on page load
+    window.addEventListener('load', () => {
+      document.querySelector('.nav-links').classList.add('visible');
+    });
+  </script>
+<script>const contentBlocks = document.querySelectorAll('.content-block');
+
+const observerOptions = {
+  threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+      obs.unobserve(entry.target); // animate once
+    }
+  });
+}, observerOptions);
+
+contentBlocks.forEach(block => {
+  observer.observe(block);
+});</script>
+  
 </body>
 </html>
