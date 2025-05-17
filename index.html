@@ -267,67 +267,6 @@
       padding-bottom: 0;
     }
 
-    /* PORTFOLIO */
-    .portfolio-section {
-      padding: 80px 20px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .portfolio-title {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 60px;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .portfolio-card {
-      background: rgb(235, 235, 235);
-      border: 1px solid #d7c4a3;
-      box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
-      border-radius: 24px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 400px;
-      transition: transform 0.3s ease;
-      will-change: transform, box-shadow;
-    }
-
-    .portfolio-card:hover {
-      animation: cardLift 0.3s forwards;
-      cursor: pointer;
-    }
-
-    .portfolio-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      display: block;
-      border-top-left-radius: 24px;
-      border-top-right-radius: 24px;
-    }
-
-    .card-text {
-      padding: 16px;
-      font-size: 18px;
-      font-family: 'Cormorant Garamond', serif;
-      color: #3b2f2f;
-      background-color: rgb(235, 235, 235);
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-bottom-left-radius: 24px;
-      border-bottom-right-radius: 24px;
-    }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
@@ -494,27 +433,3 @@
       </ul>
     </div>
   </section>
-
-  <section class="portfolio-section" id="portfolio">
-    <h2 class="portfolio-title">Preview</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-card" style="grid-column: span 1;">
-        <img src="F1 Poster (4).jpeg" alt="Poster Design" />
-        <div class="card-text">Poster Design</div>
-      </div>
-      <div class="portfolio-card" style="grid-column: span 1;">
-        <img src="Screenshot 2025-05-15 190324.png" alt="Landing Page" />
-        <div class="card-text"> Animal Icons</div>
-      </div>
-      <div class="portfolio-card" style="grid-column: span 2;">
-        <img src="Screenshot 2025-05-15 190432.png" alt="Illustration" />
-        <div class="card-text"> Italian Restaurant</div>
-      </div>
-      <div class="portfolio-card" style="grid-column: span 1;">
-        <img src="Screenshot 2025-05-15 192706.png" alt="UI Mockup" />
-        <div class="card-text"> CCCA posters & sliders</div>
-      </div>
-      <div class="portfolio-card" style="grid-column: span 1;">
-        <img src="Screenshot 2025-05-15 192156.png" alt="Typography Design" />
-        <div class="card-text">Work-life balance App</div>
-       
